@@ -14,6 +14,12 @@ const Cart: React.FC<Props> = ({ cartItems, addToCart, removeFromCart }) => {
     const calculateTotal = (items: CartItemType[]) =>
         items.reduce((acc: number, item) => acc + item.amount * item.price, 0);
 
+    // QUE HACE REDUCE?
+    // const items = [{amount: 1, price:2}, {amount: 2, price:3}, {amount: 1, price:10}];
+    // primer vuelta => acc es 0 + amount que es 1 * price que es 2 retornaria 2
+    // segunda vuelta => acc es 2 + amount que es 2 * price que es 3 retornaria 8
+    // ultima vuelta => acc es 8 + amount que es 1 * price que es 10 retornaria 18
+
     return (
         <div className='cart'>
             <h2>
